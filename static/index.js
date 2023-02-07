@@ -48,3 +48,28 @@ function displayCountryInfo(info) {
     // Clear the #fun-fact div
     // document.getElementById("fun-fact").innerHTML = “”
   }
+
+
+
+
+
+
+const registerForm = document.querySelector("#auth-form-register")
+registerForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    const userData = {
+        username: document.querySelector("#username-input-register").value,
+        password: document.querySelector("#password-input-register").value
+    }
+
+    const sendRegistration = async () => {
+        try {
+            const data = await axios.post("http://localhost:3000/register", userData)
+            document.querySelector("#username-input-register").value = ""
+            document.querySelector("#password-input-register").value = ""
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    sendRegistration()
+})

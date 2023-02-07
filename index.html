@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countries</title>
-    <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="./static/styles.css" />
     <script src="./static/index.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <form id="country-form">
-        <label for="country-input">Insert a country:</label>
-        <input type="text" id="country-input" placeholder="Country"> 
-        <input type="submit" value="Submit">
+      <label for="country-input">Insert a country:</label>
+      <input type="text" id="country-input" placeholder="Country" />
+      <input type="submit" value="Submit" />
     </form>
 
     <div id="country-info"></div>
 
     <div id="fun-fact"></div>
 
-
-</body>
+    <section class="auth">
+      <h2>Register for Countries</h2>
+      <form id="auth-form-register">
+        <label for="username-input-register">Username:</label><br />
+        <input type="text" id="username-input-register" placeholder="Username" />
+        <label for="password-input-register">Password:</label><br />
+        <input type="password" id="password-input-register" placeholder="Password" />
+        <input type="submit" value="Register" id="submit-register" />
+      </form>
+    </section>
+  </body>
 </html>
