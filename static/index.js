@@ -1,4 +1,3 @@
-// const { setTokenToLocalStorage, getTokenFromLocalStorage, removeTokenFromLocalStorage, userIsAuthenticated } = require("./authHelpers")
 const setTokenToLocalStorage = (token) => {
     window.localStorage.setItem("token", token)
 }
@@ -40,7 +39,9 @@ countryForm.addEventListener("submit", (e) => {
 
   const getData = async () => {
     try {
-      let { data } = await axios.post("http://localhost:3000/country", { country: userInput })
+      let { data } = await axios.post("http://localhost:3000/country", { country: userInput }, {
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}`}
+      })
       data = data[0]
       if (data) {
         displayCountryInfo(data)
